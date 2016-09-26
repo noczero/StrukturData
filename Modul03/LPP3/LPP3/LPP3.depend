@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1474334475 source:c:\users\harude\documents\codeblock\lpp3\main.cpp
+	<iostream>
+	"singlelist.h"
+
+1474334475 c:\users\harude\documents\codeblock\lpp3\singlelist.h
+	<iostream>
+
+1474334475 source:c:\users\harude\documents\codeblock\lpp3\singlelist.cpp
+	"singlelist.h"
+
+1474473953 source:c:\users\zero-inside\downloads\lpp3\lpp3\main.cpp
+	<iostream>
+	"singlelist.h"
+
+1474473636 c:\users\zero-inside\downloads\lpp3\lpp3\singlelist.h
+	<iostream>
+
+1474474622 source:c:\users\zero-inside\downloads\lpp3\lpp3\singlelist.cpp
+	<iostream>
+	"singlelist.h"
+
+1474477663 source:c:\users\zero-inside\documents\github\strukturdata\modul03\lpp3\lpp3\main.cpp
+	<iostream>
+	"singlelist.h"
+
+1474473636 c:\users\zero-inside\documents\github\strukturdata\modul03\lpp3\lpp3\singlelist.h
+	<iostream>
+
+1474477083 source:c:\users\zero-inside\documents\github\strukturdata\modul03\lpp3\lpp3\singlelist.cpp
+	<iostream>
+	"singlelist.h"
+

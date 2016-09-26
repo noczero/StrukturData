@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <cstring>
 #include "carwash.h"
 
 using namespace std;
