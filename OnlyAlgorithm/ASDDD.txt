@@ -1,0 +1,228 @@
+procedure menuInsertListMhs(I/0 l : listMhs , p : addressMhs) {
+kamus :
+	n : integer
+alogritma
+	input(n)
+
+	depends on (n)
+		case 1 : insertFirstMhs(L1, p) 
+
+		case 2 : input(mhs.nim)
+				  r <- findElm(mhs.nim)
+				 insertAfterMhs(L1, r , p)
+
+		case 3 : insertlastMhs(L1 , p)
+}
+
+procedure menuInsertListBrg(I/0 l : listBrg , q :addressBrg) {
+kamus :
+	n : integer
+alogritma
+	input(n)
+
+	depends on (n)
+		case 1 : input(n)
+				 insertfirstBrg(L2 , q)
+		case 2 : input(barang)
+				  s <- findElm(brg)
+				 insertAfterBrg(L2 , s , q)
+		case 3 : insertLastBrg(L2 , q)
+}
+
+procedure menuDelListMhs(I/0 l : listMhs ) {
+kamus :
+	n : integer
+	p : address
+alogritma
+	input(n)
+
+	depends on (n)
+		case 1 :  deleteFirstMhs(L1, p)
+				 dealokasi(p)
+		case 2 : input(mhs.nim)
+				  r <- findElm(mhs.nim)
+				 deleteAfterMhs(L1, r , p)
+				 dealokasi(p)
+		case 3 : deletelastMhs(L1 , p)
+				 dealokasi(p)
+		case 4 : menuUtama();
+	
+}
+
+procedure menuDelListBrg(I/0 l : listMhs ) {
+kamus :
+	n : integer
+	q : address
+alogritma
+	input(n)
+
+	depends on (n)
+		case 1 : deletefirstBrg(L2 , q)
+				 dealokasi(q)
+		case 2 : input(barang)
+				  s <- findElm(brg)
+				 deleteAfterBrg(L2 , s , q)
+		case 3 : deleteLastBrg(L2 , q)
+				dealokasi(q)	
+}
+
+
+procedure printInfo(I/0 l : listMhs) {
+	kamus :
+		p,q : address 
+	algoritma :
+		 p : first(l)
+		 if ( first(l) != nil )
+		 while ( p != nil and barang != nil) do {
+		 		output(info(p).mhs.nama)
+		 		output(info(p).mhs.nim)
+		 		q <- barang;
+		 		while (q != nil) do {
+		 			output(info(p).barang)
+		 			q <- next(q)
+		 		}
+		 		p <- next(p)
+		 } else {
+		 	output("list kosong");
+		 }
+}
+
+procedure addBrg(I/0 L1 : listMhs , I : L2 : listBrg , I nim :string , I alat : string){
+	KAMUS
+	p : addressMhs
+	q , r : addressBrg
+	L3 : listBrg
+	ALGORITMA
+
+	p <- searchMhs(L1 , nim)
+	q <- searchBrg(L2 , barang)
+
+	if( p <> nil and q <> nil) then
+		alokasi(r)
+		info(r) <- info(q)
+		L3 <- barang(p)
+		insertLastBrg(L3, r);
+}
+
+procedure deleteBrgdiMhs(I/O L1 : listMhs , I nim: string , barang : string) {
+	kamus 
+	p : addressMhs
+	L3 : listBrg
+
+	algortima
+	p <- searchMhs(L1 , nim)
+	if (p <> nil) then
+		L3 <- barang(p)
+		deleteBarang(L3, barang)
+}
+
+procedure delBrg(I/0 L1 : listMhs , I L2 : listBrg,  barang : string) {
+	kamus 
+		p : addressMhs
+		q : addressBrg
+		L3 : listBrg
+	algoritma
+		p <- first(L1)
+		while (p <> nil) do
+			L3 <- course(P)
+			deleteBrg(L3 , barang)
+
+		deleteBrg(L2 , barang)
+}
+
+procedure delMhs(I/0 L1 : listMhs , nim : string) {
+	kamus :
+		p :Address 
+		L3 : listBrg
+	algoritma
+		p <- findElmMhs(l , nim)
+		if ( p <> nil) then
+			L3 <- barang(p)
+			first(l3) <- nil
+			deleteStudent(L1 , nim)
+}
+
+procedure deleteStudent(I/O l : list , nim : string) {
+	kamus 
+		p , q : address
+	algoritma
+		p <- findElmMhs(l , nim) 
+		q = nil
+		if (first(l) != nil) then
+			deletefirst(l,p)
+		else if (next(p) = first(l)) then
+			deletelast(l,p)
+		else 
+			deleteAfter(p,q)
+			dealokasi(q)
+
+		dealokasi(p)
+}
+
+procedure deleteBarang(I/O l : list , barang : string) {
+	kamus 
+		p , q : address
+	algoritma
+		p <- findElmBrg(l , barang) 
+		q = nil
+		if (first(l) != nil) then
+			deletefirst(l,p)
+		else if (next(p) = first(l)) then
+			deletelast(l,p)
+		else 
+			deleteAfter(p,q)
+			dealokasi(q)
+
+		dealokasi(p)
+}
+
+
+-> Algoritma Main
+
+Program PiketKelas
+
+Kamus
+mhs : mahasiswa
+barang : string
+p,q,r,s : address
+
+Algoritma
+createListMhs(L1)
+createListBrg(L2)
+
+repeat
+	input(pilih)
+	depends on (pilih)
+
+		case 1 : output("Insert Data ke List Mahasiswa dan Barang")
+					if (pilih = 1) then
+						input(mhs.nama, mhs.NIM )
+						p <- alokasiMhs(mhs)
+						menuInsertListMhs(L1, p)
+					else if (pilih = 2)
+						input(barang)
+						q <- alokasiBrg(barang)
+						menuInsertListBrg(L2, q)
+		case 2 : output("Delete Data di List Mahasiswa dan Barang")
+					if (pilih = 1) then
+						menuDelListMhs(L1)
+					else if (pilih = 2)
+						menuDelListBrg(L2)
+		case 3 :  output("Nambahin barang x di Mahasiswa x")
+					input(nim, barang)
+				 	addBrg(L1, L2, nim  , barang)
+
+		case 4 : output("Hapus barang x di Mahasiswa x")
+					input(nim, barang)
+					deleteBrgdiMhs(L1,nim  , barang)
+
+		case 5 : output("Hapus Mahasiswa x")
+				delMhs( L1 , nim )
+
+		case 6 : output("Hapus semua Barang x") 
+				delBrg(L1, L2,  barang)
+
+		case 5	: printInfo(L1)
+
+		case 6 : output("Keluar")
+until (pilih = 6)
