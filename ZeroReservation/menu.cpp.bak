@@ -1,0 +1,196 @@
+#include "menu.h"
+
+bool loginAdmin(string username , string password){
+    if (username == "admin" && password == "admin")
+        return true;
+    else
+        return false;
+}
+
+bool loginPassanger(member mem ,string ID, string username , string password){
+        addressMember p = findElmMember(mem , ID);
+        if (p != NULL) {
+            if (p->info.username == username && p->info.password == password)
+                return true;
+        } else
+        return false;
+}
+void menuAdmin(schedules &sch , plane &pln , member &mem) {
+    int pilih;
+    string username,password;
+    cout << endl;
+    system("CLS");
+    cout << "========================================" << endl;
+	cout <<	"=            Zero Reservation          =" << endl;
+	cout << "========================================" << endl;
+    cout << " Masukkan Username : "; cin >> username;
+    cout << " Masukkan Password : "; cin >> password;
+    if (loginAdmin(username , password)){
+        do {
+            pilihbalik:
+             system("CLS");
+             cout << "========================================" << endl;
+            cout <<	"=            Zero Reservation          =" << endl;
+            cout << "========================================" << endl;
+            cout << " 1. Menambah Data Jadwal Penerbangan, Pesawat, dan Passenger" << endl;
+            cout << " 2. Menghapus Data Jadwal Penerbangan, Pesawat, dan Passenger " << endl;
+            cout << " 3. Mengubah Data Jadwal Penerbangan, Pesawat, dan Passenger" << endl;
+            cout << " 4. Relasi Jadwal dengan Pesawat" << endl;
+            cout << " 5. Melihat Jadwal , Pesawat , Passenger" << endl;
+            cout << " 99. Log Out" << endl;
+            cout << "\nPilih Menu : " ;
+            cin >> pilih;
+            switch (pilih) {
+                case 1 :
+                    menuTambah(sch,pln,mem);
+                break;
+                case 2 :
+                    menuHapus(sch,pln,mem);
+                break;
+                case 3 :
+                    menuEdit(sch, pln , mem);
+                break;
+                case 4 :
+                    relasiJadwaltoPlane(sch , pln);
+                break;
+                case 5 :
+                    printInfoSchedules(sch);
+                    printInfoPlane(pln);
+                    printInfoMember(mem);
+                break;
+                case 99:
+                    mainMenu(sch , pln , mem);
+                    break;
+                default :
+                    cout << "Menu tidak ada : " << endl;
+                    goto pilihbalik;
+                break;
+            }
+        } while (pilih != 99);
+    } else {
+        cout << "Username atau Password salah" << endl;
+        mainMenu(sch,pln,mem);
+    }
+}
+
+void menuPassanger(schedules &sch , plane &pln , member &mem) {
+    int pilih;
+    string username,password,ID;
+    system("CLS");
+    cout << endl;
+    cout << "========================================" << endl;
+	cout <<	"=            Zero Reservation          =" << endl;
+	cout << "========================================" << endl;
+    cout << "Masukkan Member ID \t: "; cin >> ID;
+    cout << "Masukkan Username \t: "; cin >> username;
+    cout << "Masukkan Password \t: "; cin >> password;
+
+    if (loginPassanger(mem , ID ,username , password)) {
+        do {
+            system("CLS");
+            cout << "Selamat Datang - " << username << endl;
+            cout << "========================================" << endl;
+        	cout <<	"=            Zero Reservation          =" << endl;
+        	cout << "========================================" << endl;
+            cout << " 1. Memesan Penerbangan" << endl;
+            cout << " 2. Melihat Pemesanan " << endl;
+            cout << " 3. Edit Profile" << endl;
+            cout << " 99. Back" << endl;
+            cout << "\nPilih Menu : " ;
+            cin >> pilih;
+
+            switch (pilih) {
+            case 1 :
+                //menuJadwal(mem);
+            break;
+            case 2 :
+                //printPemesan();
+            break;
+            case 3 :
+                //editPessanger();
+            break;
+            case 99 :
+            break;
+            break;
+                    default :
+                    cout << "Menu tidak ada : " << endl;
+                break;
+            }
+        } while (pilih != 99);
+
+    } else {
+        cout << "Username atau Password salah" << endl;
+        getch();
+    }
+    mainMenu(sch,pln,mem);
+}
+
+
+
+void mainMenu(schedules &sch, plane &pln , member &mem) {
+    //clrscr();
+    int pilih;
+         pilihbalik:
+        system("CLS");
+        cout << "========================================" << endl;
+    	cout <<	"=            Zero Reservation          =" << endl;
+    	cout << "========================================" << endl;
+        cout << " 1. ADMIN" << endl;
+        cout << " 2. Passangers " << endl;
+        cout << " 99. Exit" << endl;
+        cout << "\nPilih Menu : " ;
+        cin >> pilih;
+
+        switch (pilih) {
+            case 1 :
+                menuAdmin(sch , pln , mem);
+            break;
+            case 2 :
+                menuPassanger(sch , pln , mem);
+            case 99 :
+                break;
+            default :
+                cout << "Tidak ada pilihan" << endl;
+                getch();
+                goto pilihbalik;
+            break;
+        }
+}
+
+void menuTambah(schedules &sch, plane &pln , member &mem){
+    int pilih;
+    pilihbalik:
+    system("CLS");
+    cout << "========================================" << endl;
+    cout <<	"=            Zero Reservation          =" << endl;
+    cout << "========================================" << endl;
+    cout << " 1. Menambah Jadwal Penerbangan " << endl;
+    cout << " 2. Menambah Data Pesawat " << endl;
+    cout << " 3. Menambah Data Passenger" << endl;
+    cout << " 99. Exit" << endl;
+    cout << "\nPilih Menu" ;
+    cin >> pilih;
+
+    switch (pilih) {
+    case 1 :
+        system("CLS");
+        insertSchedulesMain(sch);
+    break;
+    case 2 :
+        system("CLS");
+        insertPlaneMain(pln);
+    break;
+    case 3 :
+        system("CLS");
+        insertMemberMain(mem);
+    break;
+    case 99 :
+        menuAdmin(sch,pln,mem);
+    break;
+    default :
+        cout << "Menu tidak tersedia..." << endl;
+        getch();
+        goto pilihbalik;
+    }
+
+}

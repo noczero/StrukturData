@@ -1,0 +1,14 @@
+#ifndef MENU_H_INCLUDED
+#define MENU_H_INCLUDED
+
+#include "zeroReservation.h"
+
+void menuPassanger(schedules &sch , plane &pln , member &mem);
+void menuAdmin(schedules &sch , plane &pln , member &mem);
+void mainMenu(schedules &sch, plane &pln , member &mem);
+void menuTambah(schedules &sch, plane &pln , member &mem);
+void menuHapus(schedules &sch , plane &pln , member &mem);
+void menuEdit(schedules &sch , plane &pln , member &mem);
+void pesanPenerbangan(schedules &sch , plane &pln , member &mem);
+
+#endif // MENU_H_INCLUDED
