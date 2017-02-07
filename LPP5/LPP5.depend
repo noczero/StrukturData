@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1475698480 source:c:\users\zero-inside\documents\project\codeblocks\lpp5\circularlist.cpp
+	"circularlist.h"
+
+1475697342 source:c:\users\zero-inside\documents\project\codeblocks\lpp5\main.cpp
+	<iostream>
+	"circularlist.h"
+
+1475698674 c:\users\zero-inside\documents\project\codeblocks\lpp5\circularlist.h
+	<iostream>
+

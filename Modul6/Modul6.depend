@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1385316878 source:c:\users\zero-inside\documents\project\codeblocks\modul6\main.cpp
+	<iostream>
+
+1478063127 source:c:\users\zero-inside\documents\project\codeblocks\modul6\stack.cpp
+	"stack.h"
+
+1478063058 c:\users\zero-inside\documents\project\codeblocks\modul6\stack.h
+	<iostream>
+

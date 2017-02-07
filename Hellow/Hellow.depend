@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1448187972 source:c:\users\zero-inside\documents\project\codeblocks\hellow\main.cpp
+	<iostream>
+	<string>
+

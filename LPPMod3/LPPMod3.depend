@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1474471412 source:c:\users\zero-inside\documents\project\codeblocks\lppmod3\main.cpp
+	<iostream>
+	"singlelist.h"
+
+1474470304 c:\users\zero-inside\documents\project\codeblocks\lppmod3\singlelist.h
+	<iostream>
+
+1474471502 source:c:\users\zero-inside\documents\project\codeblocks\lppmod3\singlelist.cpp
+	"singlelist.h"
+

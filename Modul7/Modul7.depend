@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1478695624 source:c:\users\zero-inside\documents\project\codeblocks\modul7\main.cpp
+	<iostream>
+	"queue.h"
+
+1478695779 source:c:\users\zero-inside\documents\project\codeblocks\modul7\queue.cpp
+	"queue.h"
+
+1478693655 c:\users\zero-inside\documents\project\codeblocks\modul7\queue.h
+	<iostream>
+

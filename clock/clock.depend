@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1473522833 source:c:\users\zero-inside\documents\project\codeblocks\clock\clock.cpp
+	<cstdio>
+	"clock.h"
+
+1473556704 c:\users\zero-inside\documents\project\codeblocks\clock\clock.h
+
+1473560016 source:c:\users\zero-inside\documents\project\codeblocks\clock\main.cpp
+	<cstdio>
+	"clock.cpp"
+	<iostream>
+	<conio.h>
+
+1473557083 c:\users\zero-inside\documents\project\codeblocks\clock\clock.cpp
+	<cstdio>
+	"clock.h"
+

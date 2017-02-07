@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1474480831 source:c:\users\zero-inside\documents\project\codeblocks\carwash\carwash.cpp
+	<iostream>
+	<string>
+	"carwash.h"
+	<string.h>
+
+1474479443 c:\users\zero-inside\documents\project\codeblocks\carwash\carwash.h
+	<iostream>
+
+1474480934 source:c:\users\zero-inside\documents\project\codeblocks\carwash\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<cstring>
+	"carwash.h"
+

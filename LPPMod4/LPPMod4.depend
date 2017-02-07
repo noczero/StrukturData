@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1475111970 source:c:\users\zero-inside\documents\project\codeblocks\lppmod4\main.cpp
+	<iostream>
+	"doublelist.h"
+
+1475110034 c:\users\zero-inside\documents\project\codeblocks\lppmod4\doublelist.h
+	<iostream>
+	<string>
+
+1475112068 source:c:\users\zero-inside\documents\project\codeblocks\lppmod4\doublelist.cpp
+	"doublelist.h"
+	<iostream>
+	<string>
+
